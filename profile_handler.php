@@ -11,7 +11,7 @@ require 'functions.php';
       $image = $_POST['myimage'];
 
     try {
-        $db = new PDO("mysql:dbname=cittadino", "root", "root");
+        $db = new PDO('mysql:host=us-cdbr-iron-east-04.cleardb.net;dbname=heroku_e35f1229d52c580', "ba97daeb49e80a", "64bc3afe");
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = "UPDATE users SET lastname='Doe' WHERE id=2";
         $stmt = $db->prepare($sql);
