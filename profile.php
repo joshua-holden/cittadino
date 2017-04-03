@@ -10,7 +10,7 @@ $image = getImage($user);
 
         <h2>Edit Profile</h2>
         
-        <?php $db = new PDO("mysql:dbname=cittadino", "root", "root"); 
+        <?php $db = new PDO('mysql:host=us-cdbr-iron-east-04.cleardb.net;dbname=heroku_e35f1229d52c580', "ba97daeb49e80a", "64bc3afe"); 
             $uname = $db->query("SELECT username FROM users WHERE id = 30");
             
         ?>
