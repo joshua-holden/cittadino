@@ -4,9 +4,11 @@ class Dao {
   private $db = "heroku_e35f1229d52c580";
   private $user = "ba97daeb49e80a";
   private $pass = "64bc3afe";
+    
   public function getConnection () {
     return
       new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user,
           $this->pass);
   }
 }
+?>

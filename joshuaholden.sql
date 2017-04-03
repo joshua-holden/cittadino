@@ -1,1 +1,37 @@
-CREATE TABLE users (	id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,    	username VARCHAR(15) NOT NULL,    	password VARCHAR(255) NOT NULL,	firstname VARCHAR(64) NOT NULL,	lastname VARCHAR(64) NOT NULL,	email VARCHAR(255) NOT NULL,	org VARCHAR(64),    	followers INTEGER DEFAULT 0,    	following INTEGER DEFAULT 0,    	polls INTEGER DEFAULT 0);CREATE TABLE follow (    	id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,	user_id INTEGER NOT NULL,	follower_id INTEGER NOT NULL,    	FOREIGN KEY(user_id) REFERENCES users(id),	FOREIGN KEY(follower_id) REFERENCES users(id));CREATE TABLE polls (    	id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,	user_id INTEGER NOT NULL,    	pollname varchar(64) NOT NULL, 	questions varchar(255) NOT NULL,	FOREIGN KEY(user_id) REFERENCES users(id));CREATE TABLE questions (    	id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,	poll_id INTEGER NOT NULL,     	question varchar(255) NOT NULL,	answer varchar(255) NOT NULL,	FOREIGN KEY(poll_id) REFERENCES polls(id));
+CREATE TABLE users (
+	id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    	username VARCHAR(15) NOT NULL,
+    	password VARCHAR(255) NOT NULL,
+	firstname VARCHAR(64) NOT NULL,
+	lastname VARCHAR(64) NOT NULL,
+	email VARCHAR(255) NOT NULL,
+	org VARCHAR(64),
+    	followers INTEGER DEFAULT 0,
+    	following INTEGER DEFAULT 0,
+    	polls INTEGER DEFAULT 0,
+	access INTEGER(1)
+);
+
+CREATE TABLE follow (
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	user_id INTEGER NOT NULL,
+	follower_id INTEGER NOT NULL,
+    FOREIGN KEY(user_id) REFERENCES users(id),
+	FOREIGN KEY(follower_id) REFERENCES users(id)
+);
+
+CREATE TABLE polls (
+    	id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	user_id INTEGER NOT NULL,
+    	pollname VARCHAR(64) NOT NULL, 
+	FOREIGN KEY(user_id) REFERENCES users(id)
+);
+
+CREATE TABLE questions (
+    	id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	poll_id INTEGER NOT NULL,
+     	question VARCHAR(255) NOT NULL,
+	answer VARCHAR(255) NOT NULL,
+	FOREIGN KEY(poll_id) REFERENCES polls(id)
+);
+
