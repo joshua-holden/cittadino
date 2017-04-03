@@ -15,6 +15,11 @@ include("header.php");
                 <input type="password" placeholder="Password" name="password" required>
         
                 <input class="buttoning" type="submit" name="login_btn" value="Log In">
+                <?php
+                    session_start();
+                    if(!empty($_SESSION['error'])) { echo $_SESSION['error']; } 
+                ?>
+                <?php unset($_SESSION['error']); ?>
             </div>
         
 

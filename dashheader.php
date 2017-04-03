@@ -1,5 +1,5 @@
 <?php
-session_start();
+    session_start();
 ?>
 
 <! DOCTYPE html>
@@ -13,8 +13,7 @@ session_start();
     <body>
     
         <header>
-            <a href="userdash.php"><img src="cittadino-icon.png"/>
-            </a>
+            <a href="userdash.php"><img src="cittadino-icon.png"/></a>
             <ul>
                 <li><a href="logout.php">Log Out</a></li>
             </ul>

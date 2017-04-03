@@ -12,11 +12,15 @@ require 'functions.php';
             $_SESSION['curuser'] = $username;
             header("Location:userdash.php");
         }else{
-            echo 'password wrong';
+            session_start();
+            $_SESSION['error'] = "Incorrect password.";
+            header("Location:login.php");
         }
 
     }else{
-        echo 'user not found';
+        session_start();
+        $_SESSION['error'] = "User not found.";
+        header("Location:login.php");
     }  
   }
 ?>
