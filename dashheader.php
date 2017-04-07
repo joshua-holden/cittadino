@@ -1,5 +1,8 @@
 <?php
     session_start();
+      if($_SESSION['active'] == 0){ 
+      header("Location: login.php");
+      }
 ?>
 
 <! DOCTYPE html>

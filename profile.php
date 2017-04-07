@@ -29,9 +29,9 @@
 
                 <input type="text" placeholder="Edit Username" name="username" pattern="[\w]{2,}" title="Usernames must be at least 2 characters long and can contain alphanumeric characters and '_'." maxlength="32">
 
-                <input type="text" placeholder="Edit First Name" name="firstname" maxlength="32">
+                <input type="text" placeholder="Edit First Name" name="firstname" pattern="[\w]{1,}" title="Must enter at least one alphanumeric character." maxlength="32">
 
-                <input type="text" placeholder="Edit Last Name" name="lastname" maxlength="32">
+                <input type="text" placeholder="Edit Last Name" name="lastname" pattern="[\w]{1,}" title="Must enter at least one alphanumeric character." maxlength="32">
 
                 <input type="text" placeholder="Edit Email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  title="Email must have format john@domain.com">
 
