@@ -10,6 +10,8 @@ require 'functions.php';
             session_start();
             $_SESSION['active'] = 1;
             $_SESSION['curuser'] = $username;
+            $id = getID($username);
+            $_SESSION['curuserid'] = $id;
             header("Location:userdash.php");
         }else{
             session_start();
