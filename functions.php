@@ -56,6 +56,17 @@
         return $q;
     }
 
+    function getID($username){
+        try {
+            $db = new PDO('mysql:host=us-cdbr-iron-east-04.cleardb.net;dbname=heroku_e35f1229d52c580', "ba97daeb49e80a", "64bc3afe");
+            $q = $db->query("SELECT id FROM users WHERE username = '$username'")->fetchColumn();
+        } catch (Exception $e) {
+            var_dump($e);
+            die;
+        }
+        return $q;
+    }
+
     function getUsers(){
         $db = new PDO('mysql:host=us-cdbr-iron-east-04.cleardb.net;dbname=heroku_e35f1229d52c580', "ba97daeb49e80a", "64bc3afe");
         $sth = $db->prepare("SELECT username FROM users");
