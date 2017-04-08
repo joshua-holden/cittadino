@@ -174,6 +174,11 @@ a.browse:hover {
     background-color: deepskyblue;
     color: white;
     cursor:pointer;
+
+}
+
+form#foll {
+        border-style: none;
 }
 
 /* Dashboard */
@@ -190,4 +195,3 @@ div.dash {
 h3.dash, p.dash {
     margin-left: 10px
 }
-
