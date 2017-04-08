@@ -26,7 +26,7 @@ $users = getUsers();
       $db = new PDO("mysql:host=us-cdbr-iron-east-04.cleardb.net;dbname=heroku_e35f1229d52c580", "ba97daeb49e80a", "64bc3afe");
       $sth = $db->prepare("INSERT INTO followers (user_id, follower_id) VALUES('$userid', '$followid')");
       $sth->execute();
-        header("Location:browse.php");
+        header("Location:following.php");
   }
         }
 
