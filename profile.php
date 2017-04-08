@@ -10,7 +10,7 @@
 
         <h2>Edit Profile</h2>
 
-        <?php $db = new PDO('mysql:host=us-cdbr-iron-east-04.cleardb.net;dbname=heroku_e35f1229d52c580', "ba97daeb49e80a", "64bc3afe");
+        <?php $db = new PDO("mysql:host=us-cdbr-iron-east-04.cleardb.net;dbname=heroku_e35f1229d52c580", "ba97daeb49e80a", "64bc3afe");
 
         ?>
         <div id="prof" class="follower">

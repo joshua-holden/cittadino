@@ -12,7 +12,7 @@ require 'functions.php';
     
       
     try {
-      $db = new PDO('mysql:host=us-cdbr-iron-east-04.cleardb.net;dbname=heroku_e35f1229d52c580', "ba97daeb49e80a", "64bc3afe");
+      $db = new PDO("mysql:host=us-cdbr-iron-east-04.cleardb.net;dbname=heroku_e35f1229d52c580", "ba97daeb49e80a", "64bc3afe");
         $sql = "INSERT INTO users (username, firstname, lastname, email, password) "
             . "VALUES('$username', '$firstname', '$lastname', '$email', '$password')";
         $stmt = $db->prepare($sql);

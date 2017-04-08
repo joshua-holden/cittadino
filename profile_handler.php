@@ -14,7 +14,7 @@
 
     try {
   
-        $db = new PDO('mysql:host=us-cdbr-iron-east-04.cleardb.net;dbname=heroku_e35f1229d52c580', "ba97daeb49e80a", "64bc3afe");
+        $db = new PDO("mysql:host=us-cdbr-iron-east-04.cleardb.net;dbname=heroku_e35f1229d52c580", "ba97daeb49e80a", "64bc3afe");
         if($username != ''){
             $sql = "UPDATE users SET username='$username' WHERE username='$oldusername'";
             $stmt = $db->prepare($sql);
