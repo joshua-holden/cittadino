@@ -1,36 +1,22 @@
 <?php 
+require 'functions.php';
 $activePage = "followers";
 include("dashheader.php");
-?>
+$userid = $_SESSION['curuserid'];
+$followers = getFollowers($userid);
 
-        <div class="follower">
-            <h2>user</h2>
-            <img class="follower" src="megaphone-icon-301.png"/>
-        </div>
-        
-        <div class="follower">
-            <h2>user</h2>
-            <img class="follower" src="megaphone-icon-301.png"/>
-        </div>
-        
-        <div class="follower">
-            <h2>user</h2>
-            <img class="follower" src="megaphone-icon-301.png"/>
-        </div>
-        
-        <div class="follower">
-            <h2>user</h2>
-            <img class="follower" src="megaphone-icon-301.png"/>
-        </div>
-        
-        <div class="follower">
-            <h2>user</h2>
-            <img class="follower" src="megaphone-icon-301.png"/>
-        </div>
-        
-        <div class="follower">
-            <h2>user</h2>
-            <img class="follower" src="megaphone-icon-301.png"/>
-        </div>
+        foreach ($followers as $id){
+            //echo '<a href="userdash.php" class="browse">';
+            $un = getUNfromID($id);
+            echo '<div class="follower">';
+            echo '<h2>' . $un . '</h2>';
+            echo '<img class="follower" src="' . getImage($un) . '"/>';
+            echo "<h6>" . getFirstname($un) . " " . getLastname($un) . "</h6>";
+            echo '</div>';
             
-<?php include("footer.php");?>
+        }
+
+        
+        
+            
+ include("footer.php");?>
